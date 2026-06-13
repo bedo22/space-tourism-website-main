@@ -1,4 +1,9 @@
-// Render functions per page. Per-page modules live in siblings:
-//   render/destination.js, render/crew.js, render/technology.js, render/home.js
-// Real implementations land in slice 5.
-export {};
+// Re-export hub for the per-page render modules. The per-page modules
+// are imported directly by page.js; this index exists so future
+// generic helpers (e.g. a list-page renderer) can live here too.
+export { mountHome } from './home.js';
+export { mountDestination } from './destination.js';
+export { mountCrew } from './crew.js';
+export { mountTechnology } from './technology.js';
+export { buildPictureEl } from './picture.js';
+export { renderErrorInPanel } from './error.js';

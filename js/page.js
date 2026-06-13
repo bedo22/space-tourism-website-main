@@ -1,3 +1,43 @@
-// Page entry point. Boots data loading and per-page render for the current URL.
-// Real implementation lands in slice 5.
-export {};
+// Page entry point. Reads the current path, dispatches to a per-page
+// module. Each module boots the Tabs component, reads the URL hash,
+// wires history.replaceState, and orchestrates image pre-decode.
+
+import * as data from './data.js';
+import { mountCrew } from './render/crew.js';
+import { mountDestination } from './render/destination.js';
+import { mountTechnology } from './render/technology.js';
+import { mountHome } from './render/home.js';
+
+const ROUTES = {
+  '/': mountHome,
+  '/index.html': mountHome,
+  '/destination.html': mountDestination,
+  '/crew.html': mountCrew,
+  '/technology.html': mountTechnology,
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  // `location.pathname` on file:// URLs can be e.g. "/E:/.../crew.html".
+  // Match by suffix on the basename so we don't have to care about the
+  // drive letter or absolute path.
+  const path = location.pathname;
+  const mount =
+    ROUTES[path] ||
+    Object.entries(ROUTES).find(([k]) => k !== '/' && path.endsWith(k.replace(/^\//, '')))?.[1] ||
+    mountHome;
+
+  // Global fetch-failure handler: any page that hits data.js can throw.
+  window.addEventListener('unhandledrejection', (e) => {
+    if (e.reason && /data\.json/.test(String(e.reason.message || e.reason))) {
+      e.preventDefault();
+      import('./render/error.js').then(({ renderErrorInPanel }) => {
+        // Render into whichever panel exists, or fall back to a top-level notice.
+        const panel = document.querySelector('[role="tabpanel"]') || document.querySelector('main');
+        renderErrorInPanel(panel, 'We could not load the trip data right now. Please try again later.');
+      });
+      console.error('data.json load failed:', e.reason);
+    }
+  });
+
+  mount(data);
+});
