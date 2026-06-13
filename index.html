@@ -25,7 +25,8 @@
         <img src="starter-code/assets/shared/logo.svg" alt="" width="40" height="40" />
       </a>
       <hr aria-hidden="true" style="flex:1; border:0; border-top:1px solid rgba(255,255,255,0.15); margin:0 1.5rem;" />
-      <button class="nav__hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+      <button class="nav__hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav-overlay"
+              data-icon-open="starter-code/assets/shared/icon-hamburger.svg" data-icon-close="starter-code/assets/shared/icon-close.svg">
         <img src="starter-code/assets/shared/icon-hamburger.svg" alt="" width="24" height="24" />
       </button>
       <ul class="nav__list" role="list">
@@ -49,6 +50,16 @@
       </section>
       <a class="home__cta" href="destination.html">Explore</a>
     </main>
+
+    <div class="mobile-nav__backdrop" hidden></div>
+    <nav id="mobile-nav-overlay" class="mobile-nav" aria-label="Mobile navigation" hidden>
+      <ul class="mobile-nav__list" role="list">
+        <li><a class="mobile-nav__link" href="index.html"><span aria-hidden="true">00&nbsp;</span>Home</a></li>
+        <li><a class="mobile-nav__link" href="destination.html"><span aria-hidden="true">01&nbsp;</span>Destination</a></li>
+        <li><a class="mobile-nav__link" href="crew.html"><span aria-hidden="true">02&nbsp;</span>Crew</a></li>
+        <li><a class="mobile-nav__link" href="technology.html"><span aria-hidden="true">03&nbsp;</span>Technology</a></li>
+      </ul>
+    </nav>
 
     <script type="module" src="js/page.js"></script>
   </body>

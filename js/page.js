@@ -7,6 +7,7 @@ import { mountCrew } from './render/crew.js';
 import { mountDestination } from './render/destination.js';
 import { mountTechnology } from './render/technology.js';
 import { mountHome } from './render/home.js';
+import { mountMobileNav } from './mobile-nav.js';
 
 const ROUTES = {
   '/': mountHome,
@@ -39,5 +40,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  mount(data);
+  // Wrap the mount in a try/catch so a fetch failure becomes a real
+  // rejection event (not an unhandled async throw). The unhandledrejection
+  // listener above catches it and renders the error panel.
+  Promise.resolve()
+    .then(() => mount(data))
+    .catch((err) => {
+      const message = String((err && (err.message || err)) || 'Unknown error');
+      if (/data\.json/.test(message) || /fetch/.test(message) || err instanceof TypeError) {
+        import('./render/error.js').then(({ renderErrorInPanel }) => {
+          const panel = document.querySelector('[role="tabpanel"]') || document.querySelector('main');
+          renderErrorInPanel(panel, 'We could not load the trip data right now. Please try again later.');
+        });
+        console.error('data.json load failed:', err);
+      } else {
+        throw err; // not our error
+      }
+    });
+  mountMobileNav();
 });

@@ -9,7 +9,7 @@
 - [x] **Step 0: Drop the four WOFF2 files into `assets/fonts/`** — `74e096e`
 - [x] Slice 3: data.json loader + picture helper — `f8ce02b`, issue #4 closed
 - [x] Slice 4: Generic Tab component — `1a8df1a`, issue #5 closed
-- [ ] Slice 5: Per-page wire-up + hash contract + decode — issue #6
+- [x] Slice 5: Per-page wire-up + hash contract + decode — `9781873`, issue #6 closed
 - [ ] Slice 6: Mobile nav overlay + error panel — issue #7
 
 ## Constraints (user-picked)

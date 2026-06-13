@@ -151,3 +151,49 @@
 /* ---- Tab panel shell (slice 2 is the JS-disabled notice only) ---- */
 .tabpanel { min-height: 16rem; }
 .tabpanel[hidden] { display: none; }
+
+/* ---- Mobile nav overlay (slice 6) ---- */
+.mobile-nav {
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: 70vw;
+  max-width: 24rem;
+  background: rgba(21, 25, 42, 0.15);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  z-index: 20;
+  transform: translateX(0);
+  animation: mobile-nav-in 250ms ease-out;
+}
+.mobile-nav[hidden] { display: none; }
+.mobile-nav--no-motion { animation: none; }
+
+@keyframes mobile-nav-in {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+.mobile-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: var(--s-120) var(--s-48) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-32);
+}
+.mobile-nav__link {
+  font-family: var(--ff-barlow);
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  color: var(--c-white);
+}
+
+.mobile-nav__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 15;
+}
+.mobile-nav__backdrop[hidden] { display: none; }

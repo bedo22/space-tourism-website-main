@@ -43,6 +43,12 @@
   .tabstrip--numbers { flex-direction: column; gap: var(--s-32); }
 }
 
+/* ---- Mobile nav: hidden on tablet+ (desktop nav is the primary nav) ---- */
+@media (min-width: 48em) {
+  .mobile-nav,
+  .mobile-nav__backdrop { display: none !important; }
+}
+
 /* ---- prefers-reduced-motion ---- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
