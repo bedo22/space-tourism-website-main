@@ -6,7 +6,7 @@
 
 - [x] Slice 1: Repo skeleton + test harness + CUBE files — `6d3e89f`, issue #2 closed
 - [x] Slice 2: Static HTML + CUBE tokens — `870feba`, issue #3 closed
-- [ ] **Step 0: Drop the four WOFF2 files into `assets/fonts/`** (next commit)
+- [x] **Step 0: Drop the four WOFF2 files into `assets/fonts/`** — `74e096e`
 - [ ] Slice 3: data.json loader + picture helper — issue #4
 - [ ] Slice 4: Generic Tab component — issue #5
 - [ ] Slice 5: Per-page wire-up + hash contract + decode — issue #6
