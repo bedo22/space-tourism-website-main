@@ -1,0 +1,14 @@
+{
+  "name": "space-tourism-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static 4-page space tourism site (CUBE CSS + vanilla JS modules).",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "jsdom": "^24.0.0",
+    "vitest": "^1.6.0"
+  }
+}

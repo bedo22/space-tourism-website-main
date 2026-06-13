@@ -8,6 +8,15 @@
 
 **To do this challenge, you need a strong understanding of HTML, CSS, and JavaScript.**
 
+## Quick start (development)
+
+```bash
+npm install
+npm test
+```
+
+The site itself is plain static files (HTML + CSS + JS modules) — there is no build step. `npm test` runs the Vitest suite under jsdom and is the only developer entry point right now.
+
 ## The challenge
 
 Your challenge is to build out this multi-page space tourism website and get it looking as close to the design as possible.

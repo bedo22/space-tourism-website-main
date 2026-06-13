@@ -1,0 +1,5 @@
+/* CUBE — Composition layer
+ * Global typographic rhythm, vertical spacing scale, page-level containers.
+ * Tokens (custom properties) land in slice 2; this file is intentionally
+ * near-empty in slice 1.
+ */

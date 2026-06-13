@@ -1,0 +1,21 @@
+<!doctype html>
+<!--
+  Fixture HTML used by the smoke test and any future browser-level checks.
+  Demonstrates the CUBE import order at the page level:
+    composition -> block -> utility -> exception
+  Final HTML pages at the repo root will follow the same order.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Space tourism — fixture</title>
+    <link rel="stylesheet" href="../css/composition.css" />
+    <link rel="stylesheet" href="../css/block.css" />
+    <link rel="stylesheet" href="../css/utility.css" />
+    <link rel="stylesheet" href="../css/exception.css" />
+  </head>
+  <body>
+    <main id="app"></main>
+    <script type="module" src="../../js/page.js"></script>
+  </body>
+</html>
