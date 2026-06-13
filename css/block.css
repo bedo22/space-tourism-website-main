@@ -1,4 +1,153 @@
 /* CUBE — Block layer
- * Unstyled, semantic class hooks (e.g. .destination, .crew, .technology).
- * Blocks declare what they ARE; their look lives here in slice 2+.
+ * Owns: unstyled, semantic class hooks. Each block declares what it IS
+ * (a destination, a crew member, etc.) and the styles that define its
+ * visual identity (per-page Tabstrip variants, hero, kicker).
  */
+
+/* ---- Kicker (eyebrow above a section heading) ---- */
+.kicker {
+  font-family: var(--ff-barlow);
+  font-weight: 400;
+  font-size: 0.875rem;            /* 14px */
+  letter-spacing: 0.1475rem;      /* 2.36px */
+  text-transform: uppercase;
+  color: var(--c-blue-300);
+  margin: 0;
+}
+
+/* ---- Top nav (shared across all pages) ---- */
+.nav {
+  position: absolute;
+  inset: 0 0 auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--s-24) var(--s-24);
+  z-index: 10;
+}
+.nav__logo { width: 40px; height: 40px; }
+.nav__list {
+  display: none;                   /* shown >= 768px in exception.css */
+  list-style: none;
+  margin: 0;
+  padding: 0 var(--s-48);
+  gap: var(--s-32);
+  background: rgba(21, 25, 42, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.nav__link {
+  display: inline-block;
+  padding: var(--s-32) 0;
+  font-family: var(--ff-barlow);
+  font-weight: 400;
+  font-size: 0.875rem;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  color: var(--c-white);
+  border-bottom: 3px solid transparent;
+}
+.nav__link[aria-current="page"] { border-bottom-color: var(--c-white); }
+.nav__link:hover { border-bottom-color: rgba(255, 255, 255, 0.5); }
+.nav__hamburger {
+  width: 24px; height: 24px;
+  background: none; border: 0; padding: 0;
+  color: var(--c-white); cursor: pointer;
+}
+.nav__hamburger[hidden] { display: none; }
+
+/* ---- Home hero ---- */
+.home {
+  position: relative;
+  min-height: 100vh;
+  padding: var(--s-120) var(--s-24) var(--s-48);
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: var(--s-120);
+  background-color: var(--c-navy);
+  background-image: url('../starter-code/assets/home/background-home-mobile.jpg');
+  background-size: cover;
+  background-position: center bottom;
+}
+.home__lead { max-width: 28rem; }
+.home__body { color: var(--c-blue-300); line-height: 1.6; }
+.home__cta {
+  justify-self: center;
+  width: 144px; height: 144px;
+  border-radius: 50%;
+  background: var(--c-white);
+  color: var(--c-navy);
+  display: grid; place-items: center;
+  font-family: var(--ff-bellefair);
+  font-size: 1.25rem;
+  letter-spacing: 0.0781rem;
+  text-transform: uppercase;
+}
+.home__cta:hover,
+.home__cta:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 60px rgba(255, 255, 255, 0.1);
+}
+.home__cta:focus-visible { box-shadow: 0 0 0 4px var(--c-white), 0 0 0 60px rgba(255, 255, 255, 0.1); }
+
+/* ---- Tabstrip (3 visual variants, ARIA shape is identical) ---- */
+.tabstrip {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: var(--s-24);
+}
+
+/* Destination variant — text-in-button with underline on active */
+.tabstrip--text { gap: var(--s-32); }
+.tabstrip--text .tab {
+  padding: var(--s-16) 0;
+  font-family: var(--ff-barlow);
+  font-weight: 400;
+  font-size: 0.875rem;
+  letter-spacing: 0.1475rem;
+  text-transform: uppercase;
+  color: var(--c-blue-300);
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+.tabstrip--text .tab[aria-selected="true"] {
+  color: var(--c-white);
+  border-bottom-color: var(--c-white);
+}
+
+/* Crew variant — dot indicators */
+.tabstrip--dots { gap: var(--s-24); }
+.tabstrip--dots .tab {
+  width: 12px; height: 12px;
+  padding: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border: 0;
+  cursor: pointer;
+}
+.tabstrip--dots .tab[aria-selected="true"] { background: var(--c-white); }
+
+/* Technology variant — numbered circles */
+.tabstrip--numbers { flex-direction: column; gap: var(--s-32); }
+.tabstrip--numbers .tab {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  color: var(--c-white);
+  font-family: var(--ff-bellefair);
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+.tabstrip--numbers .tab[aria-selected="true"] {
+  background: var(--c-white);
+  color: var(--c-navy);
+}
+
+/* ---- Tab panel shell (slice 2 is the JS-disabled notice only) ---- */
+.tabpanel { min-height: 16rem; }
+.tabpanel[hidden] { display: none; }

@@ -1,5 +1,89 @@
 /* CUBE — Composition layer
- * Global typographic rhythm, vertical spacing scale, page-level containers.
- * Tokens (custom properties) land in slice 2; this file is intentionally
- * near-empty in slice 1.
+ * Owns: design tokens (custom properties), @font-face rules, global
+ * typographic rhythm. The other three CUBE layers consume these tokens.
  */
+
+/* ---- Self-hosted WOFF2 fonts (ADR-0003, font-display: swap) ----
+ * Drop the four files into assets/fonts/. Expected filenames:
+ *   Bellefair-Regular.woff2      (display)
+ *   Barlow-Regular.woff2         (body)
+ *   Barlow-Bold.woff2            (nav active / subhead)
+ *   Barlow-Light.woff2           (body subhead: kSubhead2)
+ */
+@font-face {
+  font-family: 'Bellefair';
+  src: url('../assets/fonts/Bellefair-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Barlow';
+  src: url('../assets/fonts/Barlow-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Barlow';
+  src: url('../assets/fonts/Barlow-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Barlow';
+  src: url('../assets/fonts/Barlow-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---- Design tokens (Style Guide.png) ---- */
+:root {
+  /* Color */
+  --c-navy:        #0B0D17;  /* bg-900 */
+  --c-navy-700:    #15192A;  /* nav strip */
+  --c-blue-300:    #D0D6F9;  /* fg-300, kicker + body */
+  --c-white:       #FFFFFF;  /* fg-000 */
+  --c-rule:        #383B4B;  /* divider on tab pages */
+
+  /* Font families */
+  --ff-bellefair:  'Bellefair', Georgia, serif;
+  --ff-barlow:     'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Spacing (px scale) */
+  --s-0:   0;
+  --s-16:  1rem;
+  --s-24:  1.5rem;
+  --s-32:  2rem;
+  --s-40:  2.5rem;
+  --s-48:  3rem;
+  --s-80:  5rem;
+  --s-120: 7.5rem;
+  --s-160: 10rem;
+  --s-200: 12.5rem;
+}
+
+/* ---- Global resets / rhythm ---- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: var(--c-navy);
+  color: var(--c-white);
+  font-family: var(--ff-barlow);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body { overflow-x: hidden; }
+
+img, svg { display: block; max-width: 100%; }
+
+a { color: inherit; text-decoration: none; }

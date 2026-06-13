@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Meet your crew." />
+    <title>Space tourism — Crew</title>
+
+    <link rel="stylesheet" href="css/composition.css" />
+    <link rel="stylesheet" href="css/block.css" />
+    <link rel="stylesheet" href="css/utility.css" />
+    <link rel="stylesheet" href="css/exception.css" />
+  </head>
+  <body>
+    <a class="u-visually-hidden" href="#main">Skip to content</a>
+
+    <header class="nav" role="banner">
+      <a class="nav__logo" href="index.html" aria-label="Space tourism home">
+        <img src="starter-code/assets/shared/logo.svg" alt="" width="40" height="40" />
+      </a>
+      <hr aria-hidden="true" style="flex:1; border:0; border-top:1px solid rgba(255,255,255,0.15); margin:0 1.5rem;" />
+      <button class="nav__hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <img src="starter-code/assets/shared/icon-hamburger.svg" alt="" width="24" height="24" />
+      </button>
+      <ul class="nav__list" role="list">
+        <li><a class="nav__link" href="index.html"><span aria-hidden="true">00&nbsp;</span>Home</a></li>
+        <li><a class="nav__link" href="destination.html"><span aria-hidden="true">01&nbsp;</span>Destination</a></li>
+        <li><a class="nav__link" href="crew.html" aria-current="page"><span aria-hidden="true">02&nbsp;</span>Crew</a></li>
+        <li><a class="nav__link" href="technology.html"><span aria-hidden="true">03&nbsp;</span>Technology</a></li>
+      </ul>
+    </header>
+
+    <main id="main" class="crew" role="main">
+      <p class="kicker"><span aria-hidden="true">02&nbsp;</span>Meet your crew</p>
+
+      <ul class="tabstrip tabstrip--dots" role="tablist" aria-label="Crew member">
+        <li role="presentation"><button role="tab" id="tab-hurley"      aria-selected="true"  tabindex="0"  aria-controls="panel-hurley"      data-name="Douglas Hurley"><span class="u-visually-hidden">Douglas Hurley</span></button></li>
+        <li role="presentation"><button role="tab" id="tab-shuttleworth" aria-selected="false" tabindex="-1" aria-controls="panel-shuttleworth" data-name="Mark Shuttleworth"><span class="u-visually-hidden">Mark Shuttleworth</span></button></li>
+        <li role="presentation"><button role="tab" id="tab-glover"      aria-selected="false" tabindex="-1" aria-controls="panel-glover"      data-name="Victor Glover"><span class="u-visually-hidden">Victor Glover</span></button></li>
+        <li role="presentation"><button role="tab" id="tab-ansari"      aria-selected="false" tabindex="-1" aria-controls="panel-ansari"      data-name="Anousheh Ansari"><span class="u-visually-hidden">Anousheh Ansari</span></button></li>
+      </ul>
+
+      <section role="tabpanel" id="panel-hurley"       class="tabpanel" aria-labelledby="tab-hurley"><p>Enable JavaScript to view this content.</p></section>
+      <section role="tabpanel" id="panel-shuttleworth" class="tabpanel" aria-labelledby="tab-shuttleworth" hidden><p>Enable JavaScript to view this content.</p></section>
+      <section role="tabpanel" id="panel-glover"       class="tabpanel" aria-labelledby="tab-glover"       hidden><p>Enable JavaScript to view this content.</p></section>
+      <section role="tabpanel" id="panel-ansari"       class="tabpanel" aria-labelledby="tab-ansari"       hidden><p>Enable JavaScript to view this content.</p></section>
+    </main>
+
+    <script type="module" src="js/page.js"></script>
+  </body>
+</html>

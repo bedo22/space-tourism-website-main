@@ -1,3 +1,28 @@
 /* CUBE — Utility layer
- * Single-purpose classes (e.g. .u-flex, .u-mt-2). Defined in slice 2+.
+ * Owns: single-purpose, single-property classes. Use sparingly and
+ * prefer block-level styling in block.css when a value is block-specific.
  */
+
+/* Visually hidden but available to assistive tech (WAI-ARIA: sr-only) */
+.u-visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
+}
+
+/* Display helpers (small set; block-level layout lives in block.css) */
+.u-block  { display: block; }
+.u-flex   { display: flex; }
+.u-grid   { display: grid; }
+
+/* Text color */
+.u-color-blue-300 { color: var(--c-blue-300); }
+.u-color-white    { color: var(--c-white); }
+
+/* Uppercase + letter-spacing for sub-heads and kickers when added inline */
+.u-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.1475rem;
+}

@@ -1,4 +1,53 @@
 /* CUBE — Exception layer
- * One-off overrides and !important escapes, scoped to specific blocks.
- * Empty in slice 1; the first real entry will arrive with slice 2.
+ * Owns: media queries, focus ring overrides, and the few !important
+ * escapes that override a block's default. Per the PRD, three
+ * breakpoints: mobile < 768, tablet 768-1199, desktop >= 1200.
  */
+
+/* ---- Global focus ring (visible on all interactive elements) ---- */
+:focus-visible {
+  outline: 2px solid var(--c-white);
+  outline-offset: 3px;
+}
+
+/* ---- Mobile (< 768px) — defaults; nothing to override ---- */
+
+/* ---- Tablet (>= 768px) ---- */
+@media (min-width: 48em) {
+  .nav { padding: 0 var(--s-32) 0 0; }
+  .nav__hamburger { display: none; }
+  .nav__hamburger[hidden] { display: none; }
+  .nav__list { display: flex; }
+
+  .home {
+    padding: var(--s-200) var(--s-40) var(--s-48);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: end;
+    background-image: url('../starter-code/assets/home/background-home-tablet.jpg');
+  }
+  .home__cta { justify-self: end; width: 220px; height: 220px; font-size: 1.5rem; }
+
+  .tabstrip--text { gap: var(--s-32); }
+}
+
+/* ---- Desktop (>= 1200px) ---- */
+@media (min-width: 75em) {
+  .nav { padding: 0 var(--s-120) 0 0; }
+  .home {
+    padding: var(--s-200) var(--s-160) var(--s-120);
+    background-image: url('../starter-code/assets/home/background-home-desktop.jpg');
+  }
+  .home__body { max-width: 28rem; }
+
+  .tabstrip--numbers { flex-direction: column; gap: var(--s-32); }
+}
+
+/* ---- prefers-reduced-motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
