@@ -23,6 +23,7 @@
   align-items: center;
   justify-content: space-between;
   padding: var(--s-40) 0 var(--s-40) 0;   /* nav strip touches both left and right edges */
+  margin-top: 2rem;
   z-index: 10;
 }
 .nav__divider {
