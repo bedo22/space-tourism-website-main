@@ -1,4 +1,4 @@
-// Technology page: 3 tabs, image (portrait/landscape) + meta.
+// Technology page: 3 tabs, image + meta.
 import { createTabs } from '../tabs.js';
 import { getTechnologies, slugify } from '../data.js';
 import { buildPictureEl } from './picture.js';
@@ -6,11 +6,11 @@ import { buildPictureEl } from './picture.js';
 export async function mountTechnology() {
   const items = await getTechnologies();
   const strip = document.querySelector('[role="tablist"]');
-  const panel = document.querySelectorAll('[role="tabpanel"]')[0];
+  const panel = document.getElementById('panel-technology');
 
-  // Tech uses JPG only; the imageKey picks the right orientation based
-  // on the viewport at render time. For now we default to landscape and
-  // swap to portrait at < 768px on resize. The starter ships both.
+  // Both the stacked mobile/tablet layout and the 3-column desktop layout
+  // have a taller-than-wide image area, so the portrait asset is correct
+  // at every breakpoint. No resize swap needed.
   const tabs = createTabs({
     stripEl: strip,
     panelEl: panel,
@@ -28,14 +28,29 @@ export async function mountTechnology() {
 
 function renderTechPanel(item, panelEl) {
   panelEl.replaceChildren();
-  const isMobile = window.matchMedia && window.matchMedia('(max-width: 47.99em)').matches;
-  const orientation = isMobile ? 'portrait' : 'landscape';
-  const picture = buildPictureEl(item, { imageKey: orientation });
+  // Both the stacked mobile/tablet layout and the 3-column desktop layout
+  // have a taller-than-wide image area, so the portrait asset is correct
+  // at every breakpoint. Using landscape in a portrait container caused
+  // the image to be cropped with object-fit: cover.
+  const picture = buildPictureEl(item, { imageKey: 'portrait' });
+  picture.classList.add('technology__image');
+
+  const body = document.createElement('div');
+  body.className = 'technology__body';
+
+  const eyebrow = document.createElement('p');
+  eyebrow.className = 'kicker technology__eyebrow';
+  eyebrow.textContent = 'The terminology…';
+
   const h2 = document.createElement('h2');
+  h2.className = 'technology__name';
   h2.textContent = item.name;
   const p = document.createElement('p');
+  p.className = 'technology__bio';
   p.textContent = item.description;
-  panelEl.append(picture, h2, p);
+
+  body.append(eyebrow, h2, p);
+  panelEl.append(body, picture);
 }
 
 function hydrateFromHash(tabs, items, fallback) {

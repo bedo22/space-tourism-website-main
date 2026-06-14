@@ -1,111 +1,129 @@
-# Frontend Mentor - Space tourism website
+# Space Tourism website
 
-![Design preview for the Space tourism website coding challenge](./preview.jpg)
+A 4-page static site built from the [Frontend Mentor Space Tourism challenge](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3) starter, but implemented as a single application rather than 13 separate HTML files.
 
-## Welcome! 👋
+The project is the result of a deliberate architecture decision: instead of one HTML file per destination, crew member, and technology, the site ships **four pages** (`index.html`, `destination.html`, `crew.html`, `technology.html`) that all read the same `data.json` and use a shared Tab component to switch between items in a category. See `docs/adr/0001-data-json-js-driven.md` for the rationale and `docs/architecture/decisions-2026-06.md` for the full grilling log that produced the current shape.
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects. Our challenges are perfect portfolio pieces, so please feel free to use what you create in your portfolio to show others.
+## Stack
 
-**To do this challenge, you need a strong understanding of HTML, CSS, and JavaScript.**
+- **HTML** — 4 pages, semantic markup, ARIA tablist/tab/tabpanel roles on the category pages.
+- **CSS** — [CUBE CSS](https://cube.fyi/) layout: `css/composition.css` → `css/block.css` → `css/utility.css` → `css/exception.css`. Two breakpoints (48rem, 64rem), mobile-first.
+- **JS** — vanilla ES modules, no build step. Each page's entry is `js/page.js`; per-page renderers live in `js/render/`.
+- **Fonts** — self-hosted WOFF2 (4 weights: Regular, Bold, Light, Bellefair). No Google Fonts CDN.
+- **Tests** — `vitest` + `jsdom`. `npm test` runs them.
 
-## Quick start (development)
+There is no bundler, transpiler, or framework. The site opens by double-clicking any HTML file or by serving the directory with any static server.
+
+## Pages
+
+| Page                  | Route                 | What it does                                                                 |
+|-----------------------|-----------------------|------------------------------------------------------------------------------|
+| `index.html`          | `/`                   | Hero + "Explore" CTA. Renders without JS.                                    |
+| `destination.html`    | `/destination.html`   | Tabbed view over 4 destinations (Moon, Mars, Europa, Titan).                  |
+| `crew.html`           | `/crew.html`          | Tabbed view over 4 crew members.                                              |
+| `technology.html`     | `/technology.html`    | Tabbed view over 3 technologies (launch vehicle, spaceport, capsule).         |
+
+The active item on the category pages is encoded in the URL hash so deep-links survive a refresh — see `docs/adr/0005-url-hash-contract.md`.
+
+## Project structure
+
+```
+.
+├── index.html              Home (JS-optional)
+├── destination.html        Tabbed: destinations
+├── crew.html               Tabbed: crew
+├── technology.html         Tabbed: technology
+├── data.json               Single source of truth for items
+│
+├── css/                    CUBE CSS layers (composition, block, utility, exception)
+├── js/
+│   ├── page.js             Route table + global fetch-failure handler
+│   ├── data.js             Cached fetch('./data.json') + per-collection getters
+│   ├── tabs.js             Generic Tab factory (ADR-0006)
+│   ├── picture.js          <picture> builder with WebP/PNG + density variants
+│   ├── hash.js             URL hash contract: read, slugify, write
+│   ├── focus-trap.js       Focus trap for the mobile-nav overlay
+│   ├── mobile-nav.js       Mobile menu overlay
+│   └── render/
+│       ├── home.js
+│       ├── destination.js
+│       ├── crew.js
+│       ├── technology.js
+│       ├── error.js        data.json failure panel
+│       └── index.js        re-export hub
+│
+├── tests/                  vitest + jsdom unit tests
+├── assets/                 (empty in this repo — see "Starter assets" below)
+└── docs/
+    ├── CONTEXT.md          → see ../CONTEXT.md
+    ├── adr/                7 ADRs
+    ├── architecture/       Dec 2026-06 wrap, runtime-flow notes
+    ├── prd/                PRD: Space Tourism website v1
+    ├── plan/               Slice tracker
+    ├── agents/             Workflow guides for AI agents
+    └── handoff/            Session handoffs
+```
+
+## Getting started
 
 ```bash
+# No install needed for the site itself.
+# Open index.html in a browser, or:
+npx serve .          # any static server works
+
+# For tests:
 npm install
 npm test
 ```
 
-The site itself is plain static files (HTML + CSS + JS modules) — there is no build step. `npm test` runs the Vitest suite under jsdom and is the only developer entry point right now.
+There is no build step. The site is the source.
 
-## The challenge
+## Starter assets
 
-Your challenge is to build out this multi-page space tourism website and get it looking as close to the design as possible.
+The Figma-exported images, fonts, and per-page PNG references live under `starter-code/`. The HTML pages reference them at their original paths (e.g. `starter-code/assets/home/background-home-desktop.jpg`). The font files (4 WOFF2 weights) must be dropped into `assets/fonts/` separately before the `@font-face` rules in `css/composition.css` can resolve — see the comment at the top of that file.
 
-**This project is a collaboration between us, Scrimba, and Kevin Powell. If you'd like to see how Kevin would tackle the project, you can [follow along on Scrimba's free course](https://scrimba.com/learn/spacetravel).**
+The `starter-code/` directory is **visual reference only**. The site does not copy it into `assets/`; it references the originals directly. If you want a self-contained distribution, copy `starter-code/assets/` into `assets/` and update the `href` attributes in the HTML files.
 
-If you're working through it yourself, please use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+## Architecture, in one sentence
 
-If you choose to use a JS-heavy approach, we provide a local `data.json` file for the different page data. This means you'll be able to pull the data from there instead of using the separate `.html` files.
+**Read `data.json` once at boot; on each page, the renderer takes the relevant collection, builds a Tabstrip, and lets the user switch items via keyboard or click — the URL hash tracks the active item so deep-links and back/forward buttons work.**
 
-Your users should be able to:
+For the long version, see `docs/architecture/decisions-2026-06.md` and the runtime-flow note in `docs/architecture/runtime-flow.md`.
 
-- View the optimal layout for each of the website's pages depending on their device's screen size
-- See hover states for all interactive elements on the page
-- View each page and be able to toggle between the tabs to see new information
+## Decisions of record
 
-### Want some support on the challenge? 
+The current shape is the result of 20 settled design questions and 7 ADRs from a grill session on 2026-06-12/13. The ADRs (in `docs/adr/`) cover:
 
-[Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+- **0001** — Use `data.json` + JS-driven 4-page architecture (not the 13 starter HTMLs)
+- **0002** — No build step; native ES modules + plain CSS
+- **0003** — Self-host web fonts (no Google Fonts CDN)
+- **0004** — Two-breakpoint responsive (48rem, 64rem), mobile-first
+- **0005** — URL hash contract for tab state (slug of the active item)
+- **0006** — Tabs component keyboard contract (Arrow / Home / End / Enter / Space)
+- **0007** — Responsive image sources and densities (WebP first, PNG fallback, 1×/2×)
 
-## Where to find everything
+The Tabs component, the hash contract, the picture helper, and the mobile-nav overlay are the architectural primitives. Everything else hangs off them.
 
-Your task is to build out the project to the design file provided. You can download the Figma design file on the platform. The design download comes with a `README.md` file as well to help you get set up.
+## Glossary
 
-All the required assets for this project are in the `/assets` folder. The assets are already exported for the correct screen size and optimized. Some images are reusable at multiple screen sizes.
+Domain terms (Crew, Crew Role, Destination, Distance, Travel time, Technology, Tab, Tabstrip, Tab panel, Item) are defined in `CONTEXT.md` at the repo root. Use those terms in code, comments, and PR descriptions — not synonyms.
 
-The design system in the design file will give you more information about the various colors, fonts, and styles used in this project.
+## Testing
 
-## Using AI coding assistants
+```bash
+npm test
+```
 
-We've included two files to help you if you're using AI coding assistants (like Claude, GitHub Copilot, Cursor, etc.) while working on this challenge:
+Tests live next to the code (`tests/*.test.js`) and run under vitest with jsdom for DOM-heavy cases. The pacing model after the first two slices is "tests alongside, not before" — the contract for visual/ARIA work is the design PNG in `starter-code/Design/`, and the tests assert the structural and behavioural contract.
 
-- `AGENTS.md` - Contains detailed instructions for AI assistants on how to help you with this challenge. It's tailored to this challenge's difficulty level, so the AI will provide guidance appropriate to your learning stage—offering more support for beginner challenges and encouraging more independence on advanced ones.
-- `CLAUDE.md` - A pointer file that directs Claude-based tools to the AGENTS.md instructions.
+## Working with this repo
 
-**How to use them:** You don't need to do anything! These files are automatically detected by most AI coding tools. The AI will read them and adjust its behavior to be a better learning partner—guiding you toward solutions rather than just giving you the answers.
+- **Plans** — multi-step work goes in `docs/plan/<name>.md` as a checkbox list; update status in the same commit that closes each step.
+- **ADRs** — hard-to-reverse, surprising, or trade-off-laden decisions get a numbered file in `docs/adr/`.
+- **Handoffs** — end-of-session state is captured in `docs/handoff/<date>.md` so the next session (human or agent) can pick up without re-deriving context.
+- **Issue tracking** — see `docs/agents/issue-tracker.md` for conventions; the `gh` CLI is the tool of record.
+- **Triage labels** — `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`. See `docs/agents/triage-labels.md`.
 
-**Note:** These files are designed to help you *learn*, not to do the work for you. The AI is instructed to ask questions, give hints, and explain concepts rather than writing complete solutions.
+## License
 
-## Building your project
-
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
-
-1. Separate the `starter-code` from the rest of this project and rename it to something meaningful for you. Initialize the codebase as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
-
-## Deploying your project
-
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
-
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
-
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://www.frontendmentor.io/guides/hosting-your-solution).
-
-## Create a custom `README.md`
-
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
-
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
-
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
-
-## Submitting your solution
-
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://www.frontendmentor.io/guides/how-to-submit-solutions) for tips on how to do this.
-
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
-
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Share on [X (formerly Twitter)](https://x.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in your post. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on [LinkedIn](https://www.linkedin.com/company/frontend-mentor/).
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback.
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-**Have fun building!** 🚀
+Frontend Mentor challenge assets are for personal/portfolio use per the Frontend Mentor license. The implementation code in this repo is MIT.

@@ -26,21 +26,210 @@
     align-items: end;
     background-image: url('../starter-code/assets/home/background-home-tablet.jpg');
   }
-  .home__cta { justify-self: end; width: 220px; height: 220px; font-size: 1.5rem; }
+  .home__cta { justify-self: end; width: 272px; height: 272px; font-size: 2rem; }
 
   .tabstrip--text { gap: var(--s-32); }
+
+  .destination {
+    text-align: left;
+    padding: var(--s-200) var(--s-40) var(--s-48);
+    background-image: url('../starter-code/assets/destination/background-destination-tablet.jpg');
+  }
+  .destination .kicker { margin-bottom: var(--s-48); }
+  .destination .tabstrip--text { justify-content: flex-start; margin-bottom: var(--s-48); }
+  .destination .tabpanel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-48);
+    align-items: center;
+  }
+  .destination__image { margin: 0; width: 100%; max-width: 28rem; max-height: 60vh; }
+  .destination__image img { width: 100%; height: 100%; object-fit: contain; }
+  .destination__body { margin: 0; }
+  .destination__name { font-size: 5rem; }
+  .destination__bio { margin: 0 0 var(--s-32); }
+  .destination__meta { margin: 0; }
+
+  .crew {
+    text-align: left;
+    padding: var(--s-200) var(--s-40) var(--s-48);
+    background-image: url('../starter-code/assets/crew/background-crew-tablet.jpg');
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "kicker  kicker"
+      "body    image"
+      "tabs    image";
+    gap: var(--s-32) var(--s-48);
+  }
+  .crew .kicker { grid-area: kicker; margin-bottom: 0; }
+  .crew .tabpanel { display: contents; }
+  .crew__body { grid-area: body; }
+  .crew__image { grid-area: image; margin: 0; width: 100%; max-width: none; max-height: 80vh; border-bottom: 0; }
+  .crew__image img { width: 100%; height: 100%; object-fit: contain; object-position: bottom; }
+  .crew .tabstrip--dots { grid-area: tabs; justify-content: flex-start; }
+  .crew__name { font-size: 2.5rem; }
+  .crew__role { font-size: 1.5rem; }
+  .crew .tabstrip--dots { justify-content: flex-start; }
+
+  .technology {
+    text-align: left;
+    padding: var(--s-200) var(--s-40) var(--s-48);
+    background-image: url('../starter-code/assets/technology/background-technology-tablet.jpg');
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-template-areas:
+      "kicker  kicker"
+      "tabs    body"
+      "image   image";
+    gap: var(--s-32);
+  }
+  .technology .kicker { grid-area: kicker; margin-bottom: 0; }
+  .technology .tabpanel { display: contents; }
+  .technology__body { grid-area: body; }
+  .technology .tabstrip--numbers {
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 0;
+    grid-area: tabs;
+  }
+  .technology__image {
+    grid-area: image;
+    margin: 0;
+    max-width: 100%;
+  }
+  .technology__name { font-size: 2.5rem; }
 }
 
 /* ---- Desktop (>= 1200px) ---- */
 @media (min-width: 75em) {
-  .nav { padding: 0 var(--s-120) 0 0; }
+  .nav { padding: 0 var(--s-120) 0 var(--s-64); }
+  .nav__logo { margin-left: 4rem;}
+  .nav__divider { flex: 1; margin: 0 var(--s-48); }
+  .nav__list { padding: 0 var(--s-40) 0 var(--s-40); gap: var(--s-40); }
+  .nav__link { letter-spacing: 0.105rem; }
+
   .home {
     padding: var(--s-200) var(--s-160) var(--s-120);
     background-image: url('../starter-code/assets/home/background-home-desktop.jpg');
   }
-  .home__body { max-width: 28rem; }
+  .home__title { font-size: 9.375rem; }   /* 150px desktop */
+  .home__body { font-size: 1.125rem; max-width: 31.25rem; }
+  .home__cta { justify-self: end; width: 16.5rem; height: 16.5rem; font-size: 2rem; }
 
+  .tabstrip--text { gap: var(--s-40); }
   .tabstrip--numbers { flex-direction: column; gap: var(--s-32); }
+
+  .destination {
+    padding: var(--s-200) var(--s-160) var(--s-120);
+    background-image: url('../starter-code/assets/destination/background-destination-desktop.jpg');
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: var(--s-80);
+    row-gap: 0;
+    align-items: start;
+  }
+  .destination .kicker { grid-column: 1 / -1; margin-bottom: var(--s-80); }
+  .destination .tabstrip--text { grid-column: 2; justify-content: flex-start; margin-bottom: var(--s-48); }
+  .destination .tabpanel { display: contents; }
+  .destination__image {
+    margin: 0;
+    grid-column: 1;
+    grid-row: 2 / 4;
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+    max-width: 30rem;
+    max-height: 65vh;
+  }
+  .destination__body { margin: 0; text-align: left; grid-column: 2; grid-row: 3; }
+  .destination__name { font-size: 6.25rem; }   /* 100px */
+  .destination__bio { font-size: 1.125rem; max-width: 28rem; margin: 0 0 var(--s-24); }
+  .destination__meta {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    /* dt goes to row 1, dd to row 2; the second pair lands in col 2 */
+    column-gap: var(--s-80);
+    row-gap: var(--s-8);
+    margin: 0;
+    justify-content: start;
+    text-align: left;
+  }
+  .destination__meta dt { margin: 0; grid-row: 1; }
+  .destination__meta dd { margin: 0; grid-row: 2; }
+  .destination__meta dt:nth-of-type(2),
+  .destination__meta dd:nth-of-type(2) { grid-column: 2; }
+
+  .crew {
+    padding: var(--s-200) var(--s-160) 0;
+    background-image: url('../starter-code/assets/crew/background-crew-desktop.jpg');
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "kicker  kicker"
+      "body    image"
+      "tabs    image";
+    gap: var(--s-32) var(--s-80);
+  }
+  .crew .kicker { grid-area: kicker; margin-bottom: 0; }
+  .crew .tabpanel { display: contents; }
+  .crew__body { grid-area: body; align-self: end; margin-bottom: 8rem; }
+  .crew__image {
+    grid-area: image;
+    margin: 0;
+    align-self: stretch;
+    width: 100%;
+    max-width: none;
+    max-height: none;
+    border-bottom: 0;
+  }
+  .crew__image img { width: 100%; height: 100%; object-fit: contain; object-position: bottom; }
+  .crew .tabstrip--dots { grid-area: tabs; justify-content: flex-start; }
+  .crew__name { font-size: 3.5rem; }         /* 56px */
+  .crew__role { font-size: 2rem; }           /* 32px */
+  .crew__bio { font-size: 1.125rem; max-width: 28rem; margin: 0 0 var(--s-32); }
+
+  .technology {
+    padding: var(--s-200) var(--s-160) var(--s-120);
+    background-image: url('../starter-code/assets/technology/background-technology-desktop.jpg');
+    display: grid;
+    grid-template-columns: 80px minmax(0, 1.3fr) minmax(0, 1fr);
+    grid-template-areas:
+      "kicker  kicker  kicker"
+      "tabs    body    image";
+    gap: var(--s-32) var(--s-80);
+  }
+  .technology .kicker { grid-area: kicker; margin-bottom: 1.5rem; }
+  .technology .tabpanel { display: contents; }
+  .technology__body { grid-area: body; }
+  .technology .tabstrip--numbers {
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 0;
+    grid-area: tabs;
+    gap: var(--s-32);
+  }
+  /* Reference design: ~80px diameter numbered circles on desktop */
+  .technology .tabstrip--numbers .tab {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+  .technology__image {
+    grid-area: image;
+    margin: 0;
+    align-self: stretch;
+    max-width: none;
+    width: 100%;
+    min-height: 28rem;
+  }
+  .technology__image img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+  .technology__eyebrow { font-size: 2rem; letter-spacing: 0.125rem;}
+  /* clamp() keeps "LAUNCH VEHICLE" on a single line across the 1200-1500px desktop range.
+   * Below ~1300px the body column is too narrow for 56px, so we scale the font down. */
+  .technology__name { font-size: clamp(2.5rem, -1rem + 4.5vw, 3.5rem); }
+  .technology__bio { font-size: 1.125rem; max-width: 28rem; margin: 0 0 var(--s-32); }
 }
 
 /* ---- Mobile nav: hidden on tablet+ (desktop nav is the primary nav) ---- */

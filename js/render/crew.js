@@ -6,7 +6,7 @@ import { buildPictureEl } from './picture.js';
 export async function mountCrew() {
   const items = await getCrew();
   const strip = document.querySelector('[role="tablist"]');
-  const panel = document.querySelectorAll('[role="tabpanel"]')[0];
+  const panel = document.getElementById('panel-crew');
 
   const tabs = createTabs({
     stripEl: strip,
@@ -26,15 +26,23 @@ export async function mountCrew() {
 function renderCrewPanel(item, panelEl) {
   panelEl.replaceChildren();
   const picture = buildPictureEl(item, { imageKey: 'webp', format: 'png' });
+  picture.classList.add('crew__image');
+
+  const body = document.createElement('div');
+  body.className = 'crew__body';
+
   const role = document.createElement('p');
   role.className = 'crew__role';
   role.textContent = item.role;
   const h2 = document.createElement('h2');
+  h2.className = 'crew__name';
   h2.textContent = item.name;
   const bio = document.createElement('p');
+  bio.className = 'crew__bio';
   bio.textContent = item.bio;
 
-  panelEl.append(picture, role, h2, bio);
+  body.append(role, h2, bio);
+  panelEl.append(body, picture);
 }
 
 function hydrateFromHash(tabs, items, fallback) {

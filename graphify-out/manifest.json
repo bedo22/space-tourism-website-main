@@ -1,0 +1,332 @@
+{
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\.openclaude\\settings.local.json": {
+    "mtime": 1781385542.1143365,
+    "ast_hash": "b3f81921e0b32f2b38900a41c54d0646",
+    "semantic_hash": "b3f81921e0b32f2b38900a41c54d0646"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\js\\data.js": {
+    "mtime": 1781385238.5916078,
+    "ast_hash": "4389b484df9fc0d2c00d351683ec706d",
+    "semantic_hash": "4389b484df9fc0d2c00d351683ec706d"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\js\\mobile-nav.js": {
+    "mtime": 1781386324.989992,
+    "ast_hash": "fbb1823ae8b3d1000907fe444786f0c3",
+    "semantic_hash": "fbb1823ae8b3d1000907fe444786f0c3"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\js\\page.js": {
+    "mtime": 1781386282.4355955,
+    "ast_hash": "4b79f9182633a4830c84722f8c7f6320",
+    "semantic_hash": "4b79f9182633a4830c84722f8c7f6320"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\js\\render\\crew.js": {
+    "mtime": 1781385926.669684,
+    "ast_hash": "c76918fb71d401f4d3cdbc874470db06",
+    "semantic_hash": "c76918fb71d401f4d3cdbc874470db06"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\js\\render\\destination.js": {
+    "mtime": 1781385926.4851546,
+    "ast_hash": "5d79e17c362a3b33fa8b0855dcefcf54",
+    "semantic_hash": "5d79e17c362a3b33fa8b0855dcefcf54"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\js\\render\\error.js": {
+    "mtime": 1781385926.9864335,
+    "ast_hash": "9564dd14b50bde16c15ab49131d00dad",
+    "semantic_hash": "9564dd14b50bde16c15ab49131d00dad"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\js\\render\\home.js": {
+    "mtime": 1781385926.3445563,
+    "ast_hash": "329142b4e81465b52a3235aa3916eaa3",
+    "semantic_hash": "329142b4e81465b52a3235aa3916eaa3"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\js\\render\\index.js": {
+    "mtime": 1781385927.1563022,
+    "ast_hash": "5294ec9ea40a443c450cac6e4aa89ce6",
+    "semantic_hash": "5294ec9ea40a443c450cac6e4aa89ce6"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\js\\render\\picture.js": {
+    "mtime": 1781385587.4316692,
+    "ast_hash": "1c1a7a6f71514a7a830a3e4648e13441",
+    "semantic_hash": "1c1a7a6f71514a7a830a3e4648e13441"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\js\\render\\technology.js": {
+    "mtime": 1781385926.8225095,
+    "ast_hash": "6f5804791320ea45370f64745eaee6a3",
+    "semantic_hash": "6f5804791320ea45370f64745eaee6a3"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\js\\tabs.js": {
+    "mtime": 1781385827.333082,
+    "ast_hash": "d914092f59107ea0d389e7743475c49e",
+    "semantic_hash": "d914092f59107ea0d389e7743475c49e"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\package.json": {
+    "mtime": 1781380559.989973,
+    "ast_hash": "90ecdbd6dbbb3a1da9620b1c5f368bbc",
+    "semantic_hash": "90ecdbd6dbbb3a1da9620b1c5f368bbc"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\starter-code\\data.json": {
+    "mtime": 1774864386.0,
+    "ast_hash": "fca9b56fa53dc36ad0865b8a0b89d6de",
+    "semantic_hash": "fca9b56fa53dc36ad0865b8a0b89d6de"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\tests\\data.test.js": {
+    "mtime": 1781385469.9403653,
+    "ast_hash": "f77255542083da7272576caca29989d2",
+    "semantic_hash": "f77255542083da7272576caca29989d2"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\tests\\error-panel.test.js": {
+    "mtime": 1781386236.7378597,
+    "ast_hash": "2b4fe02b534499411cdef5ba76ebc503",
+    "semantic_hash": "2b4fe02b534499411cdef5ba76ebc503"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\tests\\mobile-nav.test.js": {
+    "mtime": 1781386289.7943797,
+    "ast_hash": "b3251fea6c6ef9e9416145b61cb5ef96",
+    "semantic_hash": "b3251fea6c6ef9e9416145b61cb5ef96"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\tests\\page.test.js": {
+    "mtime": 1781386052.8498745,
+    "ast_hash": "05f927bb17da0b457737605fe11a5d27",
+    "semantic_hash": "05f927bb17da0b457737605fe11a5d27"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\tests\\picture.test.js": {
+    "mtime": 1781385471.6424947,
+    "ast_hash": "1cf0a84a45b922d9674db879f6afe0ab",
+    "semantic_hash": "1cf0a84a45b922d9674db879f6afe0ab"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\tests\\smoke.test.js": {
+    "mtime": 1781380548.545098,
+    "ast_hash": "5446c2ab72aa2b1ad46a5f63303d3e9a",
+    "semantic_hash": "5446c2ab72aa2b1ad46a5f63303d3e9a"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\tests\\static.test.js": {
+    "mtime": 1781383815.3681543,
+    "ast_hash": "c287058283ecb076322770aeaf4e5fbf",
+    "semantic_hash": "c287058283ecb076322770aeaf4e5fbf"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\tests\\tabs.test.js": {
+    "mtime": 1781385793.228407,
+    "ast_hash": "50b435f1234fc13f39f8e865731e086d",
+    "semantic_hash": "50b435f1234fc13f39f8e865731e086d"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\vitest.config.js": {
+    "mtime": 1781380560.075311,
+    "ast_hash": "c59b6a65cfff2d8a4ca143131b150193",
+    "semantic_hash": "c59b6a65cfff2d8a4ca143131b150193"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\.scratch\\slice-1.md": {
+    "mtime": 1781369996.1376877,
+    "ast_hash": "6ba7a81ea0c8c5684674f31ebfc36fe6",
+    "semantic_hash": "6ba7a81ea0c8c5684674f31ebfc36fe6"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\.scratch\\slice-2.md": {
+    "mtime": 1781370055.027185,
+    "ast_hash": "e9401f9bf98be8b85b45a930f62cf0b8",
+    "semantic_hash": "e9401f9bf98be8b85b45a930f62cf0b8"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\.scratch\\slice-3.md": {
+    "mtime": 1781370071.9053109,
+    "ast_hash": "cb1a16a5c7cc43196363aa5be4e33d31",
+    "semantic_hash": "cb1a16a5c7cc43196363aa5be4e33d31"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\.scratch\\slice-4.md": {
+    "mtime": 1781370080.9263158,
+    "ast_hash": "f5b364f533553668a60eeec429d8b9ff",
+    "semantic_hash": "f5b364f533553668a60eeec429d8b9ff"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\.scratch\\slice-5.md": {
+    "mtime": 1781370094.0961826,
+    "ast_hash": "249ae53071487c0353de9dd26c8f0bfc",
+    "semantic_hash": "249ae53071487c0353de9dd26c8f0bfc"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\.scratch\\slice-6.md": {
+    "mtime": 1781370102.7459378,
+    "ast_hash": "4de7bb17ba0a535880e83a6ddd59c4c9",
+    "semantic_hash": "4de7bb17ba0a535880e83a6ddd59c4c9"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\CLAUDE.md": {
+    "mtime": 1781368148.198292,
+    "ast_hash": "b0a4b964901a5771df9a332b2dd365e2",
+    "semantic_hash": "b0a4b964901a5771df9a332b2dd365e2"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\CONTEXT.md": {
+    "mtime": 1781302114.8376238,
+    "ast_hash": "3bc9562a65ab72f4283fe79b8176a878",
+    "semantic_hash": "3bc9562a65ab72f4283fe79b8176a878"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\README-template.md": {
+    "mtime": 1774864386.0,
+    "ast_hash": "3252d18d86e3a56c262de1a784e808a8",
+    "semantic_hash": "3252d18d86e3a56c262de1a784e808a8"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\README.md": {
+    "mtime": 1781380586.6123261,
+    "ast_hash": "d7333e6d9c8e55f6110d03dbd12a4f22",
+    "semantic_hash": "d7333e6d9c8e55f6110d03dbd12a4f22"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\crew.html": {
+    "mtime": 1781386187.864304,
+    "ast_hash": "90d0bbd223a2843e8a5d12d10ff3f7dc",
+    "semantic_hash": "90d0bbd223a2843e8a5d12d10ff3f7dc"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\destination.html": {
+    "mtime": 1781386187.8141222,
+    "ast_hash": "08fca640172c1b67165273099bd44a5a",
+    "semantic_hash": "08fca640172c1b67165273099bd44a5a"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\docs\\adr\\0001-data-json-js-driven.md": {
+    "mtime": 1781301071.1278262,
+    "ast_hash": "203d562673f237864b5609a8e465beaa",
+    "semantic_hash": "203d562673f237864b5609a8e465beaa"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\docs\\adr\\0002-no-build-step.md": {
+    "mtime": 1781257108.840442,
+    "ast_hash": "57c44dcd5815899c4a8fcc3e43983ff7",
+    "semantic_hash": "57c44dcd5815899c4a8fcc3e43983ff7"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\docs\\adr\\0003-self-host-fonts.md": {
+    "mtime": 1781277847.511914,
+    "ast_hash": "cf6db178850a8cec58796d9d62dba0bd",
+    "semantic_hash": "cf6db178850a8cec58796d9d62dba0bd"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\docs\\adr\\0004-two-breakpoint-responsive.md": {
+    "mtime": 1781281720.4033659,
+    "ast_hash": "36667e2f5a8d97e3a1cfe6f9029c06ec",
+    "semantic_hash": "36667e2f5a8d97e3a1cfe6f9029c06ec"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\docs\\adr\\0005-url-hash-contract.md": {
+    "mtime": 1781361928.4589558,
+    "ast_hash": "688da4c6be7c5c28de9d8d417af8a5c0",
+    "semantic_hash": "688da4c6be7c5c28de9d8d417af8a5c0"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\docs\\adr\\0006-tabs-keyboard-contract.md": {
+    "mtime": 1781345775.2966692,
+    "ast_hash": "d33cefbe3580f319d6fa8d7c2022d865",
+    "semantic_hash": "d33cefbe3580f319d6fa8d7c2022d865"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\docs\\adr\\0007-responsive-images.md": {
+    "mtime": 1781361959.5147762,
+    "ast_hash": "5284fcc1f5ba9c3f1831091fc33f64d4",
+    "semantic_hash": "5284fcc1f5ba9c3f1831091fc33f64d4"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\docs\\agents\\domain.md": {
+    "mtime": 1781368148.612733,
+    "ast_hash": "7c7967b98b78e43ab859149abc9e9fd6",
+    "semantic_hash": "7c7967b98b78e43ab859149abc9e9fd6"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\docs\\agents\\issue-tracker.md": {
+    "mtime": 1781368148.340722,
+    "ast_hash": "ace4961f9e0a205c6865633f3ed9edc4",
+    "semantic_hash": "ace4961f9e0a205c6865633f3ed9edc4"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\docs\\agents\\triage-labels.md": {
+    "mtime": 1781368148.4673338,
+    "ast_hash": "72d24ba3035330fc54a2592ec5125a03",
+    "semantic_hash": "72d24ba3035330fc54a2592ec5125a03"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\docs\\architecture\\decisions-2026-06.md": {
+    "mtime": 1781362004.451704,
+    "ast_hash": "b8c911f49485094839010bd93458ac92",
+    "semantic_hash": "b8c911f49485094839010bd93458ac92"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\docs\\architecture\\runtime-flow.ar.md": {
+    "mtime": 1781343535.656699,
+    "ast_hash": "218e081c108b14a2474e2d348677237b",
+    "semantic_hash": "218e081c108b14a2474e2d348677237b"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\docs\\architecture\\runtime-flow.md": {
+    "mtime": 1781344279.9991894,
+    "ast_hash": "264a8faded50efa3a3cbb2e0894befa2",
+    "semantic_hash": "264a8faded50efa3a3cbb2e0894befa2"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\docs\\handoff\\2026-06-13.md": {
+    "mtime": 1781370373.9013062,
+    "ast_hash": "05be2231a41bdce3c7548c2acec0c43b",
+    "semantic_hash": "05be2231a41bdce3c7548c2acec0c43b"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\docs\\plan\\slices-3-6.md": {
+    "mtime": 1781387155.8784142,
+    "ast_hash": "b1016c444ac15072561cd565e74a9c4f",
+    "semantic_hash": "b1016c444ac15072561cd565e74a9c4f"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\docs\\prd\\space-tourism-v1.md": {
+    "mtime": 1781363062.8295765,
+    "ast_hash": "76f182fef33498add706f87b38c036e0",
+    "semantic_hash": "76f182fef33498add706f87b38c036e0"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\index.html": {
+    "mtime": 1781386187.5072076,
+    "ast_hash": "71a6edc96fbe3c6ef4c9492466de1786",
+    "semantic_hash": "71a6edc96fbe3c6ef4c9492466de1786"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\starter-code\\crew-commander.html": {
+    "mtime": 1774864386.0,
+    "ast_hash": "663ec2cb3e5bf9c87a1e3cceca13f5c4",
+    "semantic_hash": "663ec2cb3e5bf9c87a1e3cceca13f5c4"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\starter-code\\crew-engineer.html": {
+    "mtime": 1774864386.0,
+    "ast_hash": "52e720d2b45efd914e31a07c4d9c94ff",
+    "semantic_hash": "52e720d2b45efd914e31a07c4d9c94ff"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\starter-code\\crew-pilot.html": {
+    "mtime": 1774864386.0,
+    "ast_hash": "9b40dd4f519ce83d8a7b43471cccfbb1",
+    "semantic_hash": "9b40dd4f519ce83d8a7b43471cccfbb1"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\starter-code\\crew-specialist.html": {
+    "mtime": 1774864386.0,
+    "ast_hash": "08084d01780b5621f66b7a54b8c626c6",
+    "semantic_hash": "08084d01780b5621f66b7a54b8c626c6"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\starter-code\\destination-europa.html": {
+    "mtime": 1774864386.0,
+    "ast_hash": "045e9354c9a224ad42666222ce7fab79",
+    "semantic_hash": "045e9354c9a224ad42666222ce7fab79"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\starter-code\\destination-mars.html": {
+    "mtime": 1774864386.0,
+    "ast_hash": "d918d9277255fa52cb9cbc06532c342d",
+    "semantic_hash": "d918d9277255fa52cb9cbc06532c342d"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\starter-code\\destination-moon.html": {
+    "mtime": 1774864386.0,
+    "ast_hash": "0a0ae6de059cf7704ada0b23ac81739c",
+    "semantic_hash": "0a0ae6de059cf7704ada0b23ac81739c"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\starter-code\\destination-titan.html": {
+    "mtime": 1774864386.0,
+    "ast_hash": "459e9db554fbb50ad29524d8859997bd",
+    "semantic_hash": "459e9db554fbb50ad29524d8859997bd"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\starter-code\\index.html": {
+    "mtime": 1774864386.0,
+    "ast_hash": "fa43e9dca9e4fc38a6140f99f9e958f8",
+    "semantic_hash": "fa43e9dca9e4fc38a6140f99f9e958f8"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\starter-code\\technology-capsule.html": {
+    "mtime": 1774864386.0,
+    "ast_hash": "fdd604ac2039f9ecb748e963327d9059",
+    "semantic_hash": "fdd604ac2039f9ecb748e963327d9059"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\starter-code\\technology-spaceport.html": {
+    "mtime": 1774864386.0,
+    "ast_hash": "bff9196679834f9d15097308654ec32c",
+    "semantic_hash": "bff9196679834f9d15097308654ec32c"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\starter-code\\technology-vehicle.html": {
+    "mtime": 1774864386.0,
+    "ast_hash": "4a6f7d6de7ac4cb141c8b183ce7dfff0",
+    "semantic_hash": "4a6f7d6de7ac4cb141c8b183ce7dfff0"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\technology.html": {
+    "mtime": 1781386188.0376515,
+    "ast_hash": "261d0da0e8bde4b0833c2d9611837ca2",
+    "semantic_hash": "261d0da0e8bde4b0833c2d9611837ca2"
+  },
+  "E:\\Freelancer\\Frontend Mentor\\space-tourism-website-main\\tests\\fixtures\\index.html": {
+    "mtime": 1781380574.9056602,
+    "ast_hash": "3194dadd537af2e54e121f684e5dfa4c",
+    "semantic_hash": "3194dadd537af2e54e121f684e5dfa4c"
+  }
+}

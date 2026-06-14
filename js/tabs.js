@@ -106,6 +106,7 @@ export function createTabs({ stripEl, panelEl, items, renderPanel, onActivate })
 
   return {
     activate,
+    get activeIndex() { return activeIndex; },
     destroy() {
       tabEls.forEach((el) => {
         el.removeEventListener('click', onClick);

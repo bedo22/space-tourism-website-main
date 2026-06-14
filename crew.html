@@ -18,7 +18,7 @@
       <a class="nav__logo" href="index.html" aria-label="Space tourism home">
         <img src="starter-code/assets/shared/logo.svg" alt="" width="40" height="40" />
       </a>
-      <hr aria-hidden="true" style="flex:1; border:0; border-top:1px solid rgba(255,255,255,0.15); margin:0 1.5rem;" />
+      <hr class="nav__divider" aria-hidden="true" />
       <button class="nav__hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav-overlay"
               data-icon-open="starter-code/assets/shared/icon-hamburger.svg" data-icon-close="starter-code/assets/shared/icon-close.svg">
         <img src="starter-code/assets/shared/icon-hamburger.svg" alt="" width="24" height="24" />
@@ -35,16 +35,13 @@
       <p class="kicker"><span aria-hidden="true">02&nbsp;</span>Meet your crew</p>
 
       <ul class="tabstrip tabstrip--dots" role="tablist" aria-label="Crew member">
-        <li role="presentation"><button role="tab" id="tab-hurley"      aria-selected="true"  tabindex="0"  aria-controls="panel-hurley"      data-name="Douglas Hurley"><span class="u-visually-hidden">Douglas Hurley</span></button></li>
-        <li role="presentation"><button role="tab" id="tab-shuttleworth" aria-selected="false" tabindex="-1" aria-controls="panel-shuttleworth" data-name="Mark Shuttleworth"><span class="u-visually-hidden">Mark Shuttleworth</span></button></li>
-        <li role="presentation"><button role="tab" id="tab-glover"      aria-selected="false" tabindex="-1" aria-controls="panel-glover"      data-name="Victor Glover"><span class="u-visually-hidden">Victor Glover</span></button></li>
-        <li role="presentation"><button role="tab" id="tab-ansari"      aria-selected="false" tabindex="-1" aria-controls="panel-ansari"      data-name="Anousheh Ansari"><span class="u-visually-hidden">Anousheh Ansari</span></button></li>
+        <li role="presentation"><button class="tab" role="tab" id="tab-hurley"      aria-selected="true"  tabindex="0"  aria-controls="panel-crew" data-name="Douglas Hurley"><span class="u-visually-hidden">Douglas Hurley</span></button></li>
+        <li role="presentation"><button class="tab" role="tab" id="tab-shuttleworth" aria-selected="false" tabindex="-1" aria-controls="panel-crew" data-name="Mark Shuttleworth"><span class="u-visually-hidden">Mark Shuttleworth</span></button></li>
+        <li role="presentation"><button class="tab" role="tab" id="tab-glover"      aria-selected="false" tabindex="-1" aria-controls="panel-crew" data-name="Victor Glover"><span class="u-visually-hidden">Victor Glover</span></button></li>
+        <li role="presentation"><button class="tab" role="tab" id="tab-ansari"      aria-selected="false" tabindex="-1" aria-controls="panel-crew" data-name="Anousheh Ansari"><span class="u-visually-hidden">Anousheh Ansari</span></button></li>
       </ul>
 
-      <section role="tabpanel" id="panel-hurley"       class="tabpanel" aria-labelledby="tab-hurley"><p>Enable JavaScript to view this content.</p></section>
-      <section role="tabpanel" id="panel-shuttleworth" class="tabpanel" aria-labelledby="tab-shuttleworth" hidden><p>Enable JavaScript to view this content.</p></section>
-      <section role="tabpanel" id="panel-glover"       class="tabpanel" aria-labelledby="tab-glover"       hidden><p>Enable JavaScript to view this content.</p></section>
-      <section role="tabpanel" id="panel-ansari"       class="tabpanel" aria-labelledby="tab-ansari"       hidden><p>Enable JavaScript to view this content.</p></section>
+      <section role="tabpanel" id="panel-crew" class="tabpanel" aria-labelledby="tab-hurley" tabindex="-1"></section>
     </main>
 
     <div class="mobile-nav__backdrop" hidden></div>

@@ -6,7 +6,7 @@ import { buildPictureEl } from './picture.js';
 export async function mountDestination() {
   const items = await getDestinations();
   const strip = document.querySelector('[role="tablist"]');
-  const panel = document.querySelectorAll('[role="tabpanel"]')[0];
+  const panel = document.getElementById('panel-destination');
 
   const tabs = createTabs({
     stripEl: strip,
@@ -26,9 +26,17 @@ export async function mountDestination() {
 function renderDestinationPanel(item, panelEl) {
   panelEl.replaceChildren();
   const picture = buildPictureEl(item, { imageKey: 'webp', format: 'png' });
+  picture.classList.add('destination__image');
+
+  const body = document.createElement('div');
+  body.className = 'destination__body';
+
   const h2 = document.createElement('h2');
+  h2.className = 'destination__name';
   h2.textContent = item.name;
+
   const p = document.createElement('p');
+  p.className = 'destination__bio';
   p.textContent = item.description;
 
   const meta = document.createElement('dl');
@@ -36,11 +44,13 @@ function renderDestinationPanel(item, panelEl) {
   appendStat(meta, 'Avg. distance', item.distance);
   appendStat(meta, 'Est. travel time', item.travel);
 
-  panelEl.append(picture, h2, p, meta);
+  body.append(h2, p, meta);
+  panelEl.append(picture, body);
 }
 
 function appendStat(dl, term, value) {
   const dt = document.createElement('dt');
+  dt.className = 'kicker';
   dt.textContent = term;
   const dd = document.createElement('dd');
   dd.textContent = value;
