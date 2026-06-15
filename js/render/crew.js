@@ -34,14 +34,14 @@ function renderCrewPanel(item, panelEl) {
   const role = document.createElement('p');
   role.className = 'crew__role';
   role.textContent = item.role;
-  const h2 = document.createElement('h2');
-  h2.className = 'crew__name';
-  h2.textContent = item.name;
+  const h1 = document.createElement('h1');
+  h1.className = 'crew__name';
+  h1.textContent = item.name;
   const bio = document.createElement('p');
   bio.className = 'crew__bio';
   bio.textContent = item.bio;
 
-  body.append(role, h2, bio);
+  body.append(role, h1, bio);
   panelEl.append(body, picture);
 }
 

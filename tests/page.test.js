@@ -72,8 +72,8 @@ describe('crew.html — page wire-up', () => {
     await flush();
     const t0 = dom.window.document.getElementById('tab-hurley');
     expect(t0.getAttribute('aria-selected')).toBe('true');
-    const h2 = dom.window.document.querySelector('[role="tabpanel"] h2');
-    expect(h2.textContent).toBe('Douglas Hurley');
+    const h1 = dom.window.document.querySelector('[role="tabpanel"] h1');
+    expect(h1.textContent).toBe('Douglas Hurley');
   });
 
   it('deep-link with #mark-shuttleworth: Mark active, hash not rewritten', async () => {

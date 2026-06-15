@@ -31,9 +31,9 @@ function renderDestinationPanel(item, panelEl) {
   const body = document.createElement('div');
   body.className = 'destination__body';
 
-  const h2 = document.createElement('h2');
-  h2.className = 'destination__name';
-  h2.textContent = item.name;
+  const h1 = document.createElement('h1');
+  h1.className = 'destination__name';
+  h1.textContent = item.name;
 
   const p = document.createElement('p');
   p.className = 'destination__bio';
@@ -44,7 +44,7 @@ function renderDestinationPanel(item, panelEl) {
   appendStat(meta, 'Avg. distance', item.distance);
   appendStat(meta, 'Est. travel time', item.travel);
 
-  body.append(h2, p, meta);
+  body.append(h1, p, meta);
   panelEl.append(picture, body);
 }
 

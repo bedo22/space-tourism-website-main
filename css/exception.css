@@ -48,7 +48,14 @@
   .destination__body { margin: 0; }
   .destination__name { font-size: 5rem; }
   .destination__bio { margin: 0 0 var(--s-32); }
-  .destination__meta { margin: 0; }
+  .destination__meta {
+    margin: 0;
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-auto-flow: column;
+    column-gap: var(--s-80);
+    row-gap: var(--s-8);
+  }
 
   .crew {
     text-align: left;
@@ -70,6 +77,7 @@
   .crew .tabstrip--dots { grid-area: tabs; justify-content: flex-start; }
   .crew__name { font-size: 2.5rem; }
   .crew__role { font-size: 1.5rem; }
+  .crew__bio { margin: 0 0 var(--s-32); }
   .crew .tabstrip--dots { justify-content: flex-start; }
 
   .technology {
@@ -99,6 +107,7 @@
     max-width: 100%;
   }
   .technology__name { font-size: 2.5rem; }
+  .technology__bio { margin: 0 0 var(--s-32); }
 }
 
 /* ---- Desktop (>= 1200px) ---- */

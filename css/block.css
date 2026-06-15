@@ -24,7 +24,7 @@
   justify-content: space-between;
   padding: var(--s-40) 0 var(--s-40) 0;   /* nav strip touches both left and right edges */
   margin-top: 2rem;
-  z-index: 10;
+  z-index: 25;   /* above .mobile-nav (z-index: 20) so the X stays visible & clickable */
 }
 .nav__divider {
   flex: 1;
@@ -198,7 +198,7 @@
   height: 100%;
   object-fit: contain;
 }
-.destination__body { margin-bottom: var(--s-32); }
+.destination__body { order: 4; margin-bottom: var(--s-32); }
 .destination__name {
   font-family: var(--ff-bellefair);
   font-weight: 400;
@@ -221,7 +221,7 @@
   border-top: 1px solid var(--c-rule);
   max-width: 28rem;
 }
-.destination__meta dt { margin-bottom: var(--s-16); }
+.destination__meta dt { margin: 0; }
 .destination__meta dd {
   margin: 0;
   font-family: var(--ff-bellefair);
@@ -245,8 +245,7 @@
 .crew .kicker { margin-bottom: var(--s-32); }
 .crew .tabpanel { display: contents; }
 .crew__body { order: 2; }
-.crew .tabstrip--dots { order: 3; margin: var(--s-24) 0; }
-.crew__image { order: 4; }
+.crew__image { order: 3; }
 .crew__image {
   display: block;
   margin: 0 auto var(--s-32);
@@ -256,6 +255,7 @@
   overflow: hidden;
   border-bottom: 1px solid rgba(255,255,255,0.15);
 }
+.crew .tabstrip--dots { order: 4; margin: var(--s-24) 0; }
 .crew__image img {
   display: block;
   width: 100%;

@@ -42,14 +42,14 @@ function renderTechPanel(item, panelEl) {
   eyebrow.className = 'kicker technology__eyebrow';
   eyebrow.textContent = 'The terminology…';
 
-  const h2 = document.createElement('h2');
-  h2.className = 'technology__name';
-  h2.textContent = item.name;
+  const h1 = document.createElement('h1');
+  h1.className = 'technology__name';
+  h1.textContent = item.name;
   const p = document.createElement('p');
   p.className = 'technology__bio';
   p.textContent = item.description;
 
-  body.append(eyebrow, h2, p);
+  body.append(eyebrow, h1, p);
   panelEl.append(body, picture);
 }
 
